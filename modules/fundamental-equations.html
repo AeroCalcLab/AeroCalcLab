@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Fundamental Equations</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)'],['$','$']]
+  },
+  chtml: {
+    displayAlign: "left",
+    displayIndent: "0em"
+  }
+};
+</script>
+
+<script defer
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+
+body {
+  background: #f4f6f8;
+  color: #111;
+}
+
+.equation-box {
+  margin-bottom: 40px;
+  padding: 25px;
+  border-radius: 10px;
+  background: white;
+  color: #111;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.equation-box h2,
+.equation-box h3,
+.equation-box p,
+.equation-box li {
+  color: #111;
+}
+
+mjx-container {
+  color: #111 !important;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Fundamental Equations</h1>
+
+<p class="module-description">
+
+A reference collection of the most important equations used in
+fluid mechanics, aerodynamics, CFD, turbulence modeling,
+RANS and LES simulations.
+
+<br><br>
+
+These equations form the theoretical foundation of modern
+computational and experimental fluid dynamics.
+
+</p>
+
+<p><a href="../index.html">← Back to Home</a></p>
+
+</header>
+
+<main>
+
+<!-- ===================================================== -->
+<!-- GOVERNING EQUATIONS -->
+<!-- ===================================================== -->
+
+<section class="equation-box">
+
+<h2>1. Governing Flow Equations</h2>
+
+<h3>Continuity Equation</h3>
+
+\[
+\nabla \cdot \mathbf{u} = 0
+\]
+
+<p>
+Conservation of mass for incompressible flow.
+The divergence-free velocity field ensures that
+mass is neither created nor destroyed.
+</p>
+
+<h3>Navier–Stokes Equation</h3>
+
+\[
+\rho
+\left(
+\frac{\partial \mathbf{u}}{\partial t}
++
+\mathbf{u}\cdot\nabla\mathbf{u}
+\right)
+=
+-\nabla p
++
+\mu \nabla^2 \mathbf{u}
++
+\rho \mathbf{f}
+\]
+
+<p>
+The fundamental governing equation of fluid motion,
+representing conservation of momentum.
+</p>
+
+<h3>Material Derivative</h3>
+
+\[
+\frac{D}{Dt}
+=
+\frac{\partial}{\partial t}
++
+u_j
+\frac{\partial}{\partial x_j}
+\]
+
+<p>
+Describes the rate of change experienced by a moving
+fluid particle.
+</p>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- FLOW KINEMATICS -->
+<!-- ===================================================== -->
+
+<section class="equation-box">
+
+<h2>2. Flow Kinematics</h2>
+
+<h3>Strain-Rate Tensor</h3>
+
+\[
+S_{ij}
+=
+\frac{1}{2}
+\left(
+\frac{\partial u_i}{\partial x_j}
++
+\frac{\partial u_j}{\partial x_i}
+\right)
+\]
+
+<p>
+Measures local fluid deformation rates.
+Important in turbulence production and viscous stresses.
+</p>
+
+<h3>Rotation Tensor</h3>
+
+\[
+\Omega_{ij}
+=
+\frac{1}{2}
+\left(
+\frac{\partial u_i}{\partial x_j}
+-
+\frac{\partial u_j}{\partial x_i}
+\right)
+\]
+
+<p>
+Represents rigid-body rotation of fluid elements.
+</p>
+
+<h3>Vorticity</h3>
+
+\[
+\boldsymbol{\omega}
+=
+\nabla \times \mathbf{u}
+\]
+
+<p>
+Measures local rotational motion in the flow.
+Central to turbulence dynamics and vortex identification.
+</p>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- POTENTIAL FLOW -->
+<!-- ===================================================== -->
+
+<section class="equation-box">
+
+<h2>3. Potential Flow</h2>
+
+<h3>Bernoulli Equation</h3>
+
+\[
+p
++
+\frac{1}{2}\rho U^2
++
+\rho g h
+=
+\mathrm{constant}
+\]
+
+<p>
+Conservation of mechanical energy along a streamline
+for inviscid flow.
+</p>
+
+<h3>Laplace Equation</h3>
+
+\[
+\nabla^2 \phi = 0
+\]
+
+<p>
+Governing equation for incompressible irrotational flow.
+</p>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- TURBULENCE -->
+<!-- ===================================================== -->
+
+<section class="equation-box">
+
+<h2>4. Turbulence Fundamentals</h2>
+
+<h3>Reynolds Decomposition</h3>
+
+\[
+u_i
+=
+\overline{u_i}
++
+u_i'
+\]
+
+<p>
+Decomposition of instantaneous velocity into mean
+and fluctuating components.
+</p>
+
+<h3>Reynolds Stress Tensor</h3>
+
+\[
+\tau_{ij}
+=
+-
+\rho
+\overline{
+u_i' u_j'
+}
+\]
+
+<p>
+Represents momentum transport caused by turbulent
+velocity fluctuations.
+</p>
+
+<h3>Turbulent Kinetic Energy</h3>
+
+\[
+k
+=
+\frac{1}{2}
+\overline{
+u_i' u_i'
+}
+\]
+
+<p>
+Measures the kinetic energy contained within turbulent
+velocity fluctuations.
+</p>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- RANS -->
+<!-- ===================================================== -->
+
+<section class="equation-box">
+
+<h2>5. RANS Equations</h2>
+
+<h3>RANS Momentum Equation</h3>
+
+\[
+\rho
+\left(
+\frac{\partial \overline{u_i}}{\partial t}
++
+\overline{u_j}
+\frac{\partial \overline{u_i}}{\partial x_j}
+\right)
+=
+-
+\frac{\partial \overline{p}}{\partial x_i}
++
+\mu
+\frac{\partial^2 \overline{u_i}}{\partial x_j^2}
+-
+\frac{\partial}{\partial x_j}
+\left(
+\rho \overline{u_i' u_j'}
+\right)
+\]
+
+<p>
+Time-averaged Navier–Stokes equations used in
+steady turbulence modeling.
+</p>
+
+<h3>k-Equation</h3>
+
+\[
+\frac{Dk}{Dt}
+=
+P_k
+-
+\varepsilon
++
+\nabla \cdot
+\left[
+\left(
+\nu
++
+\frac{\nu_t}{\sigma_k}
+\right)
+\nabla k
+\right]
+\]
+
+<p>
+Transport equation for turbulent kinetic energy.
+</p>
+
+<h3>ε-Equation</h3>
+
+\[
+\frac{D\varepsilon}{Dt}
+=
+C_{\varepsilon1}
+\frac{\varepsilon}{k}
+P_k
+-
+C_{\varepsilon2}
+\frac{\varepsilon^2}{k}
++
+\nabla \cdot
+\left[
+\left(
+\nu
++
+\frac{\nu_t}{\sigma_\varepsilon}
+\right)
+\nabla \varepsilon
+\right]
+\]
+
+<p>
+Transport equation for turbulent dissipation rate.
+</p>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- TURBULENCE MODELING -->
+<!-- ===================================================== -->
+
+<section class="equation-box">
+
+<h2>6. Turbulence Modeling</h2>
+
+<h3>Boussinesq Assumption</h3>
+
+\[
+-
+\rho
+\overline{
+u_i' u_j'
+}
+=
+2\mu_t S_{ij}
+-
+\frac{2}{3}\rho k \delta_{ij}
+\]
+
+<p>
+Models Reynolds stresses using an eddy viscosity concept.
+Foundation of most RANS turbulence models.
+</p>
+
+<h3>Eddy Viscosity</h3>
+
+\[
+\mu_t
+=
+\rho C_\mu
+\frac{k^2}{\varepsilon}
+\]
+
+<p>
+Defines turbulent viscosity in the standard
+\(k-\varepsilon\) model.
+</p>
+
+<h3>Turbulence Production</h3>
+
+\[
+P_k
+=
+-
+\overline{
+u_i' u_j'
+}
+\frac{\partial \overline{u_i}}{\partial x_j}
+\]
+
+<p>
+Represents transfer of mean-flow kinetic energy
+into turbulence.
+</p>
+
+<h3>Turbulence Dissipation</h3>
+
+\[
+\varepsilon
+=
+2\nu
+\overline{
+S_{ij}' S_{ij}'
+}
+\]
+
+<p>
+Represents viscous destruction of turbulent kinetic energy
+at the smallest turbulent scales.
+</p>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- LES -->
+<!-- ===================================================== -->
+
+<section class="equation-box">
+
+<h2>7. Large Eddy Simulation (LES)</h2>
+
+<h3>Filtered Navier–Stokes Equations</h3>
+
+\[
+\frac{\partial \overline{u_i}}{\partial t}
++
+\overline{u_j}
+\frac{\partial \overline{u_i}}{\partial x_j}
+=
+-
+\frac{1}{\rho}
+\frac{\partial \overline{p}}{\partial x_i}
++
+\nu
+\frac{\partial^2 \overline{u_i}}{\partial x_j^2}
+-
+\frac{\partial \tau_{ij}^{SGS}}{\partial x_j}
+\]
+
+<p>
+LES directly resolves large turbulent structures while
+modeling only the smallest unresolved scales.
+</p>
+
+<h3>Subgrid-Scale Stress Tensor</h3>
+
+\[
+\tau_{ij}^{SGS}
+=
+\overline{u_i u_j}
+-
+\overline{u_i}
+\ \overline{u_j}
+\]
+
+<p>
+Represents the influence of unresolved turbulent motions.
+</p>
+
+<h3>Smagorinsky Model</h3>
+
+\[
+\nu_t
+=
+(C_s \Delta)^2
+|S|
+\]
+
+<p>
+Classical LES subgrid-scale turbulence model.
+</p>
+
+</section>
+
+</main>
+
+</body>
+</html>
